@@ -28,6 +28,11 @@ h1 {
     align-items: center;
 }
 
+.player__cards {
+    display: flex;
+    justify-content: center;
+}
+
 h6 {
     text-align: center;
 }
