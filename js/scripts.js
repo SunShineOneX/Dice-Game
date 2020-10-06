@@ -1,53 +1,50 @@
 let player1 = document.getElementById("player__1");
 let player2 = document.getElementById("player__2");
+let header = document.getElementById("winner");
 
-console.log("HELLO THERE!!!");
+let diceRoll = () => {
+    let diceOneRandom = Math.floor(Math.random() * 6) + 1;
+    let diceTwoRandom = Math.floor(Math.random() * 6) + 1;
 
+    let playerOneImg = () => {
+        if (diceOneRandom === 1) {
+            player1.src = "./assets/dice1.png"
+        } else if (diceOneRandom === 2) {
+            player1.src="./assets/dice2.png"
+        } else if (diceOneRandom === 3) {
+            player1.src="./assets/dice3.png"
+        } else if (diceOneRandom === 4) {
+            player1.src="./assets/dice4.png"
+        } else if (diceOneRandom === 5) {
+            player1.src="./assets/dice5.png"
+        } else player1.src="./assets/dice6.png"
+    }
 
-function randomNum() { 
-    let random = Math.floor(Math.random() * 6) + 1;
-    return random;
+    let playerTwoImg = () => {
+        if (diceTwoRandom === 1) {
+            player2.src = "./assets/dice1.png"
+        } else if (diceTwoRandom === 2) {
+            player2.src="./assets/dice2.png"
+        } else if (diceTwoRandom === 3) {
+            player2.src="./assets/dice3.png"
+        } else if (diceTwoRandom === 4) {
+            player2.src="./assets/dice4.png"
+        } else if (diceTwoRandom === 5) {
+            player2.src="./assets/dice5.png"
+        } else player2.src="./assets/dice6.png"
+    }
+
+    if (diceOneRandom === diceTwoRandom) {
+        header.innerHTML = "Draw!"
+    } else if (diceOneRandom > diceTwoRandom) {
+        header.innerHTML = "Player 1 wins!"
+    } else {
+        header.innerHTML = "Player 2 wins!"
+        console.log(diceOneRandom, "Player one!");
+        console.log(diceTwoRandom, "Player Two!");
+    }
+    playerOneImg();
+    playerTwoImg();
 }
 
-function diceRollPlayer1() {
-    randomNum()
-    if (randomNum() === 1) {
-        player1.src = "assets/dice1.png"
-    }
-    else if (randomNum()  === 2) {
-        player1.src = "assets/dice2.png"
-    }
-    else if (randomNum()  === 3) {
-        player1.src = "assets/dice3.png"
-    }
-    else if (randomNum()  === 4) {
-        player1.src = "assets/dice4.png"
-    }
-    else if (randomNum()  === 5) {
-        player1.src = "assets/dice5.png"
-    }
-    else player1.src = "assets/dice6.png"
-}
-
-function diceRollPlayer2() {
-    randomNum()
-    if (randomNum() === 1) {
-        player2.src = "assets/dice1.png"
-    }
-    else if (randomNum()  === 2) {
-        player2.src = "assets/dice2.png"
-    }
-    else if (randomNum()  === 3) {
-        player2.src = "assets/dice3.png"
-    }
-    else if (randomNum()  === 4) {
-        player2.src = "assets/dice4.png"
-    }
-    else if (randomNum()  === 5) {
-        player2.src = "assets/dice5.png"
-    }
-    else player2.src = "assets/dice6.png"
-}
-
-diceRollPlayer1();
-diceRollPlayer2();
+diceRoll();
