@@ -20,12 +20,12 @@ player2.src=randomDiceImg2;
 //
 let determineWinner = () => {
     if(randomNumber1 > randomNumber2) {
-        winner.innerHTML= "Player 1 wins!"
+        winner.innerHTML= "☀️ Player 1 wins!"
     }
     else if (randomNumber2 > randomNumber1) {
-        winner.innerHTML= "Player 2 wins!" 
+        winner.innerHTML= "🌙 Player 2 wins!" 
     }
-    else winner.innerHTML= "Draw!"
+    else winner.innerHTML= "❄️ Draw!"
 }
 
 determineWinner();
